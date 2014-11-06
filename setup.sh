@@ -117,6 +117,8 @@ else
 fi
 echo_pass
 
+echo "Generating HTML docs from wiki"
+./doc.sh
 
 # echo "Creating configuration from samples"
 
@@ -140,12 +142,7 @@ echo_pass
 
 
 echo "Building programs"
-echo -n " -> executing build.sh... "
 ./build.sh
-echo_pass
-
-echo "Generating HTML docs from wiki"
-./doc.sh
 
 echo "DONE!"
 exit 0
