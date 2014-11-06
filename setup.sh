@@ -139,10 +139,16 @@ echo "Generating HTML docs from wiki"
 # cp $PWD/conf/services/mqtt-broker.json.sample $PWD/conf/services/mqtt-broker.json
 # echo_pass
 
-
-
 echo "Building programs"
 ./build.sh
 
-echo "DONE!"
+echo "Reset library file"
+rm -rf library.json
+cascades library add components/
+# echo -n " -> conf/services/*.json... "
+# cp $PWD/conf/services/mqtt-broker.json.sample $PWD/conf/services/mqtt-broker.json
+# echo_pass
+echo ""
+
+echo "Ready!"
 exit 0
