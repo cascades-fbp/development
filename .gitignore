@@ -5,3 +5,4 @@ website/
 wiki/
 docs/
 dist/
+.vagrant/

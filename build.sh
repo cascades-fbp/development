@@ -39,7 +39,11 @@ buildComponents() {
     do
         echo -n " -> ${c}... "
         go get -d $2
-        go build -o components/$c $2/$c
+        if [ "$3" = "" ]; then
+            go build -o components/$c $2/$c
+        else
+            go build -o components/$3/$c $2/$c
+        fi
         echo_pass
     done
 }
@@ -56,37 +60,37 @@ build_core() {
 build_sockets() {
     echo "Building sockets component:"
     components=('tcp-server')
-    buildComponents $components "github.com/cascades-fbp/cascades-sockets"
+    buildComponents $components "github.com/cascades-fbp/cascades-sockets" "sockets"
 }
 
 build_websockets() {
     echo "Building websocket components:"
     components=('client' 'server')
-    buildComponents $components "github.com/cascades-fbp/cascades-websocket"
+    buildComponents $components "github.com/cascades-fbp/cascades-websocket" "websocket"
 }
 
 build_bonjour() {
     echo "Building bonjour components:"
     components=('discover' 'register')
-    buildComponents $components "github.com/cascades-fbp/cascades-bonjour"
+    buildComponents $components "github.com/cascades-fbp/cascades-bonjour" "bonjour"
 }
 
 build_influxdb() {
     echo "Building InfluxDB components:"
     components=('write')
-    buildComponents $components "github.com/cascades-fbp/cascades-influxdb"
+    buildComponents $components "github.com/cascades-fbp/cascades-influxdb" "influxdb"
 }
 
 build_http() {
     echo "Building http components:"
     components=('client' 'router' 'server')
-    buildComponents $components "github.com/cascades-fbp/cascades-http"
+    buildComponents $components "github.com/cascades-fbp/cascades-http" "http"
 }
 
 build_mqtt() {
     echo "Building MQTT components:"
     components=('pub' 'sub')
-    buildComponents $components "github.com/cascades-fbp/cascades-mqtt"
+    buildComponents $components "github.com/cascades-fbp/cascades-mqtt" "mqtt"
 }
 
 # Build cascades CLI
