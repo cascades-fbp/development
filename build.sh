@@ -22,7 +22,8 @@ build_sockets
 build_websockets
 build_bonjour
 build_influxdb
-#buildHTTP
+build_http
 build_mqtt
+build_caf
 
 exit 0;

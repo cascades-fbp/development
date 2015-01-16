@@ -44,7 +44,7 @@ build_core() {
     components=('core/console' 'core/delay' 'core/drop' 'core/exec' \
         'core/joiner' 'core/passthru' 'core/readfile' 'core/splitter' \
         'core/submatch' 'core/switch' 'core/template' 'core/ticker' \
-        'debug/crasher' 'debug/oneshot' 'fs/walk' 'fs/watchdog')
+        'debug/crasher' 'fs/walk' 'fs/watchdog')
     buildComponents $components "github.com/cascades-fbp/cascades/components"
 }
 
@@ -74,7 +74,8 @@ build_influxdb() {
 
 build_http() {
     echo "Building http components:"
-    components=('client' 'router' 'server')
+    #components=('client' 'router' 'server')
+    components=('client')
     buildComponents $components "github.com/cascades-fbp/cascades-http" "http"
 }
 
@@ -82,4 +83,10 @@ build_mqtt() {
     echo "Building MQTT components:"
     components=('pub' 'sub')
     buildComponents $components "github.com/cascades-fbp/cascades-mqtt" "mqtt"
+}
+
+build_mqtt() {
+    echo "Building CAF components:"
+    components=('http-property' 'context')
+    buildComponents $components "github.com/cascades-fbp/cascades-caf" "caf"
 }

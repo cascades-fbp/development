@@ -2,7 +2,7 @@
 
 CASCADES_VERSION=$1
 #OSARCHS=( "darwin/amd64" "linux/amd64" "linux/arm" "windows/amd64" );
-OSARCHS=( "darwin/amd64" );
+OSARCHS=( "linux/amd64" );
 
 source func.sh
 
@@ -38,8 +38,8 @@ do
     cp $DIR/examples/tick.json $d/examples/
     cp $DIR/examples/regexp2json.fbp $d/examples/
 
-    cd $DIR/dist && /usr/bin/zip -9 -r "${p}.zip" "$p"
-    cd $DIR/dist && /usr/bin/tar -zcvf "${p}.tar.gz" $p
+    cd $DIR/dist && zip -9 -r "${p}.zip" "$p"
+    #cd $DIR/dist && tar -zcvf "${p}.tar.gz" $p
     rm -rf $d
 done
 
