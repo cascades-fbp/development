@@ -42,6 +42,7 @@ buildComponents() {
 build_core() {
     echo "Building core components:"
     components=('core/console' 'core/delay' 'core/drop' 'core/exec' \
+        'core/distinct' \
         'core/joiner' 'core/passthru' 'core/readfile' 'core/splitter' \
         'core/submatch' 'core/switch' 'core/template' 'core/ticker' \
         'debug/crasher' 'fs/walk' 'fs/watchdog')
@@ -85,7 +86,7 @@ build_mqtt() {
     buildComponents $components "github.com/cascades-fbp/cascades-mqtt" "mqtt"
 }
 
-build_mqtt() {
+build_caf() {
     echo "Building CAF components:"
     components=('http-property' 'context')
     buildComponents $components "github.com/cascades-fbp/cascades-caf" "caf"

@@ -18,12 +18,11 @@ echo_pass
 
 # Build components
 build_core
-build_sockets
-build_websockets
-build_bonjour
-build_influxdb
-build_http
-build_mqtt
-build_caf
+#build_sockets
+#build_websockets
+#build_bonjour
+#build_influxdb
+#build_http
+#build_mqtt
 
 exit 0;

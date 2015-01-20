@@ -31,6 +31,12 @@ do
     pushd $d
     gox -verbose -output="cascades" -osarch="${v}" github.com/cascades-fbp/cascades/cmd/cascades
     build_core
+    build_sockets
+    build_websockets
+    build_bonjour
+    build_influxdb
+    build_http
+    build_mqtt
     popd
 
     mkdir $d/examples
